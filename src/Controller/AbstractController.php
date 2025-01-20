@@ -19,7 +19,7 @@ abstract class AbstractController
         return $flash;
     }
 
-    public function redirectToUri(string $uri)
+    public function redirectToUri(string $uri): string
     {
         $this->redirectUri = $uri;
 

@@ -6,7 +6,7 @@ use App\Repository\ArticleRepository;
 
 class ArticleController extends AbstractController
 {
-    public function list()
+    public function list(): array
     {
         $articleRepository = new ArticleRepository();
 
@@ -16,7 +16,7 @@ class ArticleController extends AbstractController
         ];
     }
 
-    public function show(int $id)
+    public function show(int $id): array
     {
         $articleRepository = new ArticleRepository();
 
@@ -26,7 +26,7 @@ class ArticleController extends AbstractController
         ];
     }
 
-    public function create(?array $postedData = null)
+    public function create(?array $postedData = null): string|array
     {
         if ($postedData) {
             //from POST method
@@ -46,7 +46,7 @@ class ArticleController extends AbstractController
         ];
     }
 
-    public function edit(int $id, ?array $postedData = null)
+    public function edit(int $id, ?array $postedData = null): array
     {
         $articleRepository = new ArticleRepository();
         $article = $articleRepository->find($id);
